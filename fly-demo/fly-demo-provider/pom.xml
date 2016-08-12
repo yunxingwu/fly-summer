@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>fly-demo</artifactId>
+        <groupId>com.star</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <release-directory>${project.build.directory}/fly-provider</release-directory>
+    </properties>
+    <artifactId>fly-demo-provider</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.star</groupId>
+            <artifactId>fly-demo-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+            <dependency>
+                <groupId>com.star</groupId>
+                <artifactId>fly</artifactId>
+                <version>1.0</version>
+            </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>fly-provider</finalName>
+        <!--控制资源文件的拷贝-->
+        <resources>
+            <!-- 指定目录下的文件输出到指定目录-->
+            <resource>
+                <directory>src/main/src</directory>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+            <!-- 把依赖包打入jar中-->
+            <!--<descriptorRefs>-->
+            <!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
+            <!--</descriptorRefs>-->
+            <descriptor>src/main/resources/assembly.xml</descriptor>
+            <encoding>UTF-8</encoding>
+            </configuration>
+            <executions>
+            <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+            <goal>single</goal>
+            </goals>
+            </execution>
+            </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

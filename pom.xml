@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.star</groupId>
+    <artifactId>fly-summer</artifactId>
+    <packaging>pom</packaging>
+	<version>1.0</version>
+    <modules>
+        <module>fly-common</module>
+        <module>fly-rpc</module>
+        <module>fly-register</module>
+        <module>fly</module>
+        <module>fly-demo</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-version>4.2.1.RELEASE</spring-version>
+        <!--<dubbo-vesrion>2.5.3</dubbo-vesrion>-->
+        <zkclient-version>0.7</zkclient-version>
+        <junit-version>4.12</junit-version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
