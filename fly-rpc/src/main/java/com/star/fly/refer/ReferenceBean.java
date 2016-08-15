@@ -16,7 +16,7 @@ public class ReferenceBean<T>  implements InitializingBean ,FactoryBean{
     public T refer(){
         try {
             Class<?> clz = Class.forName(interfaceClass);
-            ref = ClientHandler.getProxy(clz);
+            ref = ClientHandler.getProxy(clz);  //创建代理负责远程调用
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

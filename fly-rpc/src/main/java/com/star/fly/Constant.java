@@ -6,5 +6,5 @@ package com.star.fly;
 
 public class Constant {
     //zookeeper连接地址
-    public static String URL = "172.26.6.19:2181";
+//    public static String URL = "172.26.6.19:2181";
 }

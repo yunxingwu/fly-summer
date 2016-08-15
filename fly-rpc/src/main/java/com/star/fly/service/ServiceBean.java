@@ -1,7 +1,5 @@
 package com.star.fly.service;
 
-import com.star.fly.FlyExporter;
-import com.star.fly.Invoker;
 import com.star.fly.ProxyFactory;
 import com.star.fly.net.NetUtil;
 import com.star.fly.server.RpcServer;
@@ -12,7 +10,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Map;
@@ -41,14 +38,14 @@ public class ServiceBean<T> implements ApplicationListener {
             }
             String [] methodArray =  methodNames.toArray(new String[1]);
             URL url = new URL(NetUtil.getHostAddress(),interfaceClass,methodArray,2018);
-            Object proxy =  ProxyFactory.getProxy(ref.getClass());
+            Object proxy =  ProxyFactory.getProxy(ref.getClass());     //创建实现类代理
             String key = URL.urlEncoder(url.toString());
             exporterMap.put(key,proxy);
             //get注册中心
            ZookeeperRegister register = ZookeeperRegister.getRegister();
-            register.register(url);
+            register.register(url);            //注册服务URL
             RpcServer rpcServer = new RpcServer();
-            rpcServer.start();
+            rpcServer.start();            //启动进程绑定端口
         } catch (Exception e) {
             e.printStackTrace();
         }

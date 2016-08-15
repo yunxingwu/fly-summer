@@ -1,12 +1,9 @@
 package com.star.fly.zookeeper;
 
-import com.star.fly.Constant;
 import com.star.fly.Register;
 import com.star.fly.url.URL;
 import org.I0Itec.zkclient.IZkChildListener;
 import org.I0Itec.zkclient.ZkClient;
-import org.I0Itec.zkclient.exception.ZkNoNodeException;
-import org.apache.zookeeper.CreateMode;
 
 import java.util.List;
 

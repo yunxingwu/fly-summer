@@ -5,6 +5,7 @@ import com.star.fly.service.InvokerHanlder;
 import java.lang.reflect.Proxy;
 
 /**
+ *  代理工厂类，负责创建代理对象
  * Created by  wuyunxing on   2016/7/21.
  */
 

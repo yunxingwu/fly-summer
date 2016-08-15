@@ -15,7 +15,7 @@ public class RpcEncoder extends MessageToByteEncoder <RpcRequest>{
     protected void encode(ChannelHandlerContext ctx, RpcRequest rpcRequest, ByteBuf byteBuf) throws Exception {
         byte[] body = SerializaUtil.objectTobyte(rpcRequest);
         int dataLength = body.length;  //读取消息的长度
-        byteBuf.writeInt(dataLength);  //先将消息长度写入，也就是消息头
+        byteBuf.writeInt(dataLength);  //先将消息长度写入，也就是消息头，4个字节
         byteBuf.writeBytes(body);  //消息体中包含我们要发送的数据
         ctx.flush();
     }

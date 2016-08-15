@@ -1,10 +1,7 @@
 package com.star.fly.service;
 
-import com.star.fly.Invoker;
-
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 
 /**
  * Created by  wuyunxing on   2016/7/20.

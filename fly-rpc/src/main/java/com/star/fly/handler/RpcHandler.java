@@ -23,14 +23,6 @@ public class RpcHandler extends ChannelHandlerAdapter {
      */
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-//        String a = "test";
-//        ByteBuf mes = Unpooled.buffer(a.getBytes().length);
-//        mes.writeByte(a.getBytes().length);
-//        RpcRequest request = new RpcRequest();
-//        request.setContext("aaaaa");
-//        request.setId("12345");
-//        ctx.writeAndFlush(request);
-//        ctx.writeAndFlush(mes );
         if (rpcRequest!=null){
             ctx.writeAndFlush(rpcRequest);
         }

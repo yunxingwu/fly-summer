@@ -13,7 +13,7 @@ import java.util.List;
 public class RpcDecoder extends ByteToMessageDecoder {
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf byteBuf, List<Object> list) throws Exception {
-        if (byteBuf.readableBytes() < 4) {  //这个HEAD_LENGTH是我们用于表示头长度的字节数。  由于上面我们传的是一个int类型的值，所以这里HEAD_LENGTH的值为4.
+        if (byteBuf.readableBytes() < 4) {
             return;
         }
         byteBuf.markReaderIndex();                  //我们标记一下当前的readIndex的位置
