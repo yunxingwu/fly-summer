@@ -1,5 +1,3 @@
-package com.star.fly.config;
-
 import com.star.fly.TestBean;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.RuntimeBeanReference;
@@ -7,8 +5,6 @@ import org.springframework.beans.factory.support.RootBeanDefinition;
 import org.springframework.beans.factory.xml.BeanDefinitionParser;
 import org.springframework.beans.factory.xml.ParserContext;
 import org.w3c.dom.Element;
-
-import java.util.Objects;
 
 /**
  * Created by  wuyunxing on   2016/7/27.

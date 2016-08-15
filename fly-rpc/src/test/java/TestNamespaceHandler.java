@@ -1,5 +1,3 @@
-package com.star.fly.config;
-
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
 /**
